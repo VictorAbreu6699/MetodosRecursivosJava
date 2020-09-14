@@ -1,1 +1,3 @@
+Classe MyIO contem métodos já prontos para ler dados do teclado e retornar os dados para a tela.
+
 Programas criados para um trabalho academico.
