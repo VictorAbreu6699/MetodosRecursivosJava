@@ -1,6 +1,6 @@
 public class ciframentoDeCesar {
 	/**
-	 * Após receber uma String como argumento, desloca cada caractere 3 casas(de acordo com a tabela ASCII) e retorna uma String Criptografada  
+	 * ApÃ³s receber uma String como argumento, desloca cada caractere 3 casas(de acordo com a tabela ASCII) e retorna uma String Criptografada  
 	 * @param i
 	 * @param texto
 	 * @param textoCripto
@@ -9,14 +9,8 @@ public class ciframentoDeCesar {
 	private static String criptografa(int i, String texto, String textoCripto)
 	{
 		String resultado;
-		if (i < texto.length()) {
-			if (texto.charAt(i) != '\n') {
-				resultado = criptografa(i+1, texto, textoCripto + ((char)((int)texto.charAt(i) + 3)));
-			}
-			else {
-				resultado = criptografa(i+1, texto, textoCripto + texto.charAt(i));
-			}
-			
+		if (i < texto.length()) {			
+			resultado = criptografa(i+1, texto, textoCripto + ((char)((int)texto.charAt(i) + 3)));						
 		}
 		else {
 			resultado = textoCripto; 
@@ -28,15 +22,15 @@ public class ciframentoDeCesar {
 		return criptografa(0, texto, "");
 	}
 	public static void main(String[] args){
-		String aux, texto = "", parada = "FIM";		
+		String texto = "", parada = "FIM";		
 		
-		aux = MyIO.readLine();
-		while (!aux.equals(parada)) {		
-			texto += aux + "\n";		
-			aux = MyIO.readLine();
+		texto = MyIO.readLine();
+		while (!texto.equals(parada)) {		
+			MyIo.println(criptografa(texto));
+			texto = MyIO.readLine();
 		} 
 		
-		MyIO.println(criptografa(texto));
+		
 		
 		
 	}
